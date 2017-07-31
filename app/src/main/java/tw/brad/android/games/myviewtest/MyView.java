@@ -14,13 +14,14 @@ import java.util.HashMap;
 import java.util.LinkedList;
 
 public class MyView extends View {
-    private LinkedList<LinkedList<HashMap<String,Float>>> lines;
+    private LinkedList<LinkedList<HashMap<String,Float>>> lines, recycle;
 
     public MyView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         setBackgroundColor(Color.GREEN);
 
         lines = new LinkedList<>();
+        recycle = new LinkedList<>();
     }
 
     @Override
@@ -74,12 +75,15 @@ public class MyView extends View {
 
     public void undo(){
         if (lines.size()>0) {
-            lines.removeLast();
+            recycle.add(lines.removeLast());
             invalidate();
         }
     }
     public void redo(){
-
+        if (recycle.size()>0) {
+            lines.add(recycle.removeLast());
+            invalidate();
+        }
     }
 
 }
