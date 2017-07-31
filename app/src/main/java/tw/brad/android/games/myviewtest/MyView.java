@@ -39,9 +39,6 @@ public class MyView extends View {
                         p1.get("x"), p1.get("y"), paint);
             }
         }
-
-
-
     }
 
     @Override
@@ -69,4 +66,17 @@ public class MyView extends View {
 
         return true;
     }
+
+    public void clear(){
+        lines.clear();
+        invalidate();
+    }
+
+    public void undo(){
+
+    }
+    public void redo(){
+
+    }
+
 }

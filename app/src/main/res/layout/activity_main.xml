@@ -17,15 +17,24 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="bt1"
+            android:text="Clear"
+            android:onClick="clearMyView"
             />
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="bt1"
+            android:text="Undo"
+            android:onClick="undoMyView"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Redo"
+            android:onClick="redoMyView"
             />
     </LinearLayout>
     <tw.brad.android.games.myviewtest.MyView
+        android:id="@+id/myView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
