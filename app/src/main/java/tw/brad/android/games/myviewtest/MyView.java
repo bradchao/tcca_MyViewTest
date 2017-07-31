@@ -36,13 +36,18 @@ public class MyView extends View {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         float ex = event.getX(), ey = event.getY();
-        if (event.getAction() == MotionEvent.ACTION_MOVE ||
-                event.getAction() == MotionEvent.ACTION_DOWN){
-            HashMap<String,Float> point = new HashMap<>();
-            point.put("x", ex);
-            point.put("y", ey);
-            line.add(point);
+
+        switch (event.getAction()){
+            case MotionEvent.ACTION_DOWN:
+            case MotionEvent.ACTION_MOVE:
+                HashMap<String,Float> point = new HashMap<>();
+                point.put("x", ex);
+                point.put("y", ey);
+                line.add(point);
+                Log.i("brad", ex + " x " + ey);
+                break;
         }
+
         return true;
     }
 }
