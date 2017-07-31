@@ -73,7 +73,10 @@ public class MyView extends View {
     }
 
     public void undo(){
-
+        if (lines.size()>0) {
+            lines.removeLast();
+            invalidate();
+        }
     }
     public void redo(){
 
