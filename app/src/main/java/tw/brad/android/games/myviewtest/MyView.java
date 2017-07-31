@@ -31,6 +31,15 @@ public class MyView extends View {
         paint.setColor(Color.BLUE);
         paint.setStrokeWidth(8);
 
+        for (int i=1; i<line.size(); i++){
+            HashMap<String,Float> p0 = line.get(i-1);
+            HashMap<String,Float> p1 = line.get(i);
+            canvas.drawLine(p0.get("x"), p0.get("y"),
+                    p1.get("x"), p1.get("y"), paint);
+        }
+
+
+
     }
 
     @Override
@@ -44,7 +53,7 @@ public class MyView extends View {
                 point.put("x", ex);
                 point.put("y", ey);
                 line.add(point);
-                Log.i("brad", ex + " x " + ey);
+                invalidate();   // repaint
                 break;
         }
 
