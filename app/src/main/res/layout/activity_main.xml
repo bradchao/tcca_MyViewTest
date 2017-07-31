@@ -25,10 +25,9 @@
             android:text="bt1"
             />
     </LinearLayout>
-    <TextView
+    <tw.brad.android.games.myviewtest.MyView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello World!"
         android:layout_weight="1"
         />
 
